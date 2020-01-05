@@ -5,10 +5,10 @@ import scrape_section
 urls = [
     '/tawrat/',
     '/tarixtik-kitaptar',
-#    '/naqil-sozder',
-#    '/zabuуr',
-#    '/paygambarlardeng-jazbalare',
-#    '/injil'
+    '/naqil-sozder',
+    '/zabuуr',
+    '/paygambarlardeng-jazbalare',
+    '/injil'
 ]
 
 Bible = []
