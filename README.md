@@ -6,3 +6,7 @@ Use `./scraper.py` with no arguments to scrape the site. Output in
 
 This scraper makes a best effort attempt at gathering data. If it cannot
 scrape a section, book, or chapter, that portion will be silently omitted.
+
+## Dependencies
+* requests
+* beautifulsoup4
