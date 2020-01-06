@@ -9,8 +9,6 @@ def scrape(url):
         links = page.find_all(class_='book')
         for raw_link in links:
             link = raw_link.a['href']
-            books.append(scrape_book.scrape(link))
-
-        return books
+            yield scrape_book.scrape(link)
     except:
         return []

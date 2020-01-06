@@ -10,7 +10,15 @@ def scrape(url):
                 try:
                     verse_num = int(element.string)
                 except:
-                    verses.append(classes.Verse(verse_num, element.string))
+                    try:
+                        if verses[len(verses)-1].number == verse_num:
+                            verses[len(verses)-1].text += element.string
+                        else:
+                            verses.append(classes.Verse(verse_num, element.string))
+                    except Exception:
+                        verses.append(classes.Verse(verse_num, element.string))
+
         return classes.Chapter(int(page.h2.string), verses)
-    except:
+    except Exception:
+        print('error on chapter {}'.format(url))
         return None
