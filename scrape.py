@@ -6,11 +6,11 @@ import argparse
 parser = argparse.ArgumentParser(description='Scrape qudaisozi.com')
 #Let the user pick which part
 group = parser.add_mutually_exclusive_group()
-group.add_argument('-o', '--old-testament', help='scrape only the Old Testament', action="store_true")
+group.add_argument('-O', '--old-testament', help='scrape only the Old Testament', action="store_true")
 group.add_argument('-n', '--new-testament', help='scrape only the New Testament', action="store_true")
 group.add_argument('-w', '--whole-bible', help='scrape the whole Bible (default)', action="store_true")
 #Let the user pick the output file
-parser.add_argument('-f', '--output-file', help='change the output file (default `Bible.txt`)')
+parser.add_argument('-o', '--output-file', help='change the output file (default `Bible.txt`)')
 args = parser.parse_args()
 old_testament = [
     '/tawrat/',
