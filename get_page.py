@@ -3,10 +3,13 @@
 import requests
 from bs4 import BeautifulSoup
 class NotFoundError(Exception):
+    '''Raised when a page does not return 200'''
     pass
 
 cache = {}
 def get(url):
+    '''get(url) - Get page url, return BeautifulSoup object on 200; raise
+NotFoundError otherwise'''
     if url in cache.keys():
         response = cache[url]
         del cache[url] #Only use a cached page once

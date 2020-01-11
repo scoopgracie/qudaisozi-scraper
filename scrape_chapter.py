@@ -1,6 +1,8 @@
 import classes
 import get_page
 def scrape(url):
+    '''scrape(url) - scrape chapter <url> (starting with /) from qudaisozi.com,
+return Scrape object, or None on error'''
     url = 'https://qudaisozi.com{}'.format(url) 
     try:
         page = get_page.get(url)

@@ -3,6 +3,8 @@
 import scrape_book
 import get_page
 def scrape(url):
+    '''scrape(url) - scrape section <url> (starting with /) from qudaisozi.com,
+return generator of Book objects, or empty list on error'''
     url = 'https://qudaisozi.com{}'.format(url) #URLs come starting with the /
     try:
         page = get_page.get(url)
@@ -16,4 +18,5 @@ def scrape(url):
         if type(e) == KeyboardInterrupt:
             print('exiting')
             exit(0)
+        print('error on section {}'.format(url))
         return []
