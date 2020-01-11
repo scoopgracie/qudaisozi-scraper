@@ -9,7 +9,9 @@ def scrape(url):
         links = page.find_all(class_='book') #Get all links to books
         print('got section {}'.format(url))
         for link in links:
-            yield scrape_book.scrape(link.a['href']) #Give a book
+            book = scrape_book.scrape(link.a['href'])
+            if book is not None:
+                yield book
     except Exception as e:
         if type(e) == KeyboardInterrupt:
             print('exiting')
