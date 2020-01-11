@@ -51,12 +51,11 @@ if __name__ == '__main__':
         #Create or empty the file)
         f.write('')
 
-    for book in Bible:
-        for chapter in book.chapters:
-            Bible_text = '{} {}\n'.format(book.name, chapter.number) #Chapter header
-            for verse in chapter.verses:
-                Bible_text += '{} {}\n'.format(verse.number, verse.text) #Verse format
-            Bible_text += '\n' #Put a blank line between chapters
-            with open(file_name, 'a+') as f:
+        for book in Bible:
+            for chapter in book.chapters:
+                Bible_text = '{} {}\n'.format(book.name, chapter.number) #Chapter header
+                for verse in chapter.verses:
+                    Bible_text += '{} {}\n'.format(verse.number, verse.text) #Verse format
+                Bible_text += '\n' #Put a blank line between chapters
                 f.write(Bible_text)
                 print('wrote chapter {} {} to {}'.format(book.name, chapter.number, file_name))
